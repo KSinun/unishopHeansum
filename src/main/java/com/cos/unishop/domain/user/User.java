@@ -5,6 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import com.cos.unishop.bucket.Bucket;
+import com.cos.unishop.bucket.BucketProducts;
 
 import lombok.Data;
 
@@ -23,4 +29,13 @@ public class User {
     private String address;
     private String phonenumber; 
 
+    //
+//    
+//    @OneToOne
+//    @JoinColumn(name="bucket")
+//    private BucketProducts userBucket;
+    @ManyToOne
+    @JoinColumn(name="bucket_id")
+    private Bucket bucket;
+    
 }

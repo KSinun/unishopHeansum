@@ -1,6 +1,5 @@
-package com.cos.unishop.domain.payment;
+package com.cos.unishop.bucket;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -11,8 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-import com.cos.unishop.bucket.BucketProducts;
+import com.cos.unishop.domain.post.Post;
 import com.cos.unishop.domain.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -20,30 +20,36 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Payment {
-
+public class BucketProducts {
+// 장바구니 DB입니다
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String name;
-	private String address;
-	
-	
-	@JsonIgnoreProperties({"user"})
 	@JoinColumn(name = "user_id")
-	@ManyToOne
-	private User user;
+	@OneToOne
+	private User user; 
 	
-	// @ 관련된 것 생각해봐야함
-//	@JsonIgnoreProperties({"user_id"})
-//	@OneToMany(mappedBy = "user_id", fetch = FetchType.LAZY)
-//	private List<BucketProducts> products;
-//	
-	@JoinColumn(name = "total_price")
-	private int totalPrice;
 
-//	private Date paymentDate;
+//	@ManyToOne
+//	private Bucket bucket;
+//	private Post product;
+//	{
+//	private int id;
+//	
+//	private String productname;
+//	private String image;
+//	private String detail;
+//	private int price;
+//	private String size;
+//	private String category;
+//	}
+	
+	private int count;
+	
+//	@JoinColumn(name = "total_payment")
+	private int totalPayment;
+	
 	
 }
