@@ -34,8 +34,8 @@ public class User {
 //    @OneToOne
 //    @JoinColumn(name="bucket")
 //    private BucketProducts userBucket;
-    @ManyToOne
-    @JoinColumn(name="bucket_id")
-    private Bucket bucket;
+//    @ManyToOne
+//    @JoinColumn(name="bucket_id")
+//    private Bucket bucket;
     
 }

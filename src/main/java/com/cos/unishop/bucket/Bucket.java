@@ -1,5 +1,6 @@
 package com.cos.unishop.bucket;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,9 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+
+import com.cos.unishop.domain.post.Post;
 import com.cos.unishop.domain.user.User;
 
 import lombok.Data;
@@ -28,7 +32,9 @@ public class Bucket {
 	private User user;
 		
 	@OneToMany
-	@JoinColumn(name="bucket_id")
-	private List<BucketProducts> products;
+	@JoinColumn(name="products")
+	private Collection<Post> products;
 	
+	private int count;
+	private int totalPayment;
 }
