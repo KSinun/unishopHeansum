@@ -40,5 +40,7 @@ public class Bucket {
 	private Post products;
 	
 	private int count;
-	private int totalPayment;
+	private int totalpayment;
+
+
 }

@@ -33,12 +33,13 @@ public class MyPageController {
 	//지금은 페이지만 연결해놓은거
 	//나중에 모델에 담에서뿌려야함 ㅇㅋ?
 	
-	@GetMapping("/bucket/{id}")
-	public String myPage(@PathVariable int id, Model model) {
-		User userEntity = userRepository.findById(id).get();
-		model.addAttribute("userEntity", userEntity);
-		return"user/bucket";
-	}
+//	버킷 컨트롤러에 확인!
+//	@GetMapping("/bucket/{id}")
+//	public String myPage(@PathVariable int id, Model model) {
+//		User userEntity = userRepository.findById(id).get();
+//		model.addAttribute("userEntity", userEntity);
+//		return"user/bucket";
+//	}
 	
 	@GetMapping("/paymentList")
 	public String paymentList() {

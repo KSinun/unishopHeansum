@@ -70,11 +70,45 @@ function goPaymentAPI(){
 		
 		//ì¥ë°êµ¬ë
 		function goBucket() {
-			alert("장바구니에 담으시겠습니까?");
+			
+			alert("장바구니에 가시겠습니까?");
 			
 			
 			
-			location.href = "/bucket";
+			location.href = "/bucket/${principal.id}";
+		}
+		
+		async function inputBucket(productname,image,size,price) {
+			
+			
+			if(confirm("선택한 상품이 장바구니에 담겼습니다, 장바구니로 가시겠습니까?")== true) {
+				console.log("나실행됨?");
+				event.preventDefault();
+				
+				let postDto = {
+						productname: productname,
+						image: image,
+						size: size,
+						price: price
+				};
+				
+				response = await fetch("/bucket/${postEntity.user.id}",{
+					method: "post",
+					body: JSON.stringify(postDto),
+					headers: {
+						"Content-Type": "application/json;charset=utf-8"
+					}
+				});
+				
+				
+				
+				location.href = "/bucket/${principal.id}";
+			} else {
+				return ;
+			}
+			
+			
+			
 		}
 
 		function logout() {

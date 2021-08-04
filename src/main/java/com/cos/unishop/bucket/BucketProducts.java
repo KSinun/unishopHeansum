@@ -18,8 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 
-@Data
-@Entity
+
 public class BucketProducts {
 // 장바구니 DB입니다
 	
