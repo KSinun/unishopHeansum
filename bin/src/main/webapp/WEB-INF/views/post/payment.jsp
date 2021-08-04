@@ -1,83 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <%@ include file="../layout/header.jsp"%>
 
+<main class="main-box">
 
-<main class="sidebar-main">
-	<!--side bar-->
-	<div class="sidebars">
-		<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-			<a href="#"
-				class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-				<svg class="bi me-2" width="30" height="24">
-						<use xlink:href="#bootstrap" /></svg> <span class="fs-5 fw-semibold">My
-					page</span>
-			</a>
-			<ul class="list-unstyled ps-0">
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#home-collapse"
-						aria-expanded="true">Service Information</button>
-					<div class="collapse show" id="home-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/CommentsManagement" class="link-dark rounded">Comments
-									management</a></li>
-							<li><a href="/bucket" class="link-dark rounded">Shopping
-									bucket</a></li>
-							<li><a href="#" class="link-dark rounded">Payment list</a></li>
-						</ul>
-					</div>
-				</li>
-				<!-- <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                Dashboard
-              </button>
-              <div class="collapse" id="dashboard-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">Overview</a></li>
-                  <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                  <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                  <li><a href="#" class="link-dark rounded">Annually</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                Orders
-              </button>
-              <div class="collapse" id="orders-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">New</a></li>
-                  <li><a href="#" class="link-dark rounded">Processed</a></li>
-                  <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                  <li><a href="#" class="link-dark rounded">Returned</a></li>
-                </ul>
-              </div>
-            </li> -->
-				<li class="border-top my-3"></li>
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#account-collapse"
-						aria-expanded="false">Account</button>
-					<div class="collapse" id="account-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
-							<li><a href="#" class="link-dark rounded">Profile
-									modification</a></li>
-							<li><a href="#" class="link-dark rounded">Settings</a></li>
-							<li><a href="#" class="link-dark rounded">Sign out</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!--side bar End-->
 
 	<!--컨텐츠 영역 section-->
-	<section class="mypage-section">
+	<section class="section">
 		<div class="title">
-			<h2>Shopping bucket</h2>
+			<h2>Payment Page</h2>
 			<!-- <hr/> -->
 		</div>
 
@@ -92,7 +22,7 @@
 			<!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
 
 
-			<div>
+			<div class="input-comments">
 				<!-- Button trigger modal -->
 				<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >
               상품평 쓰기
@@ -128,7 +58,7 @@
 							<th scope="col">판매가</th>
 							<th scope="col">수량</th>
 							<th scope="col">합계</th>
-							<th scope="col">삭제</th>
+							<th scope="col"></th>
 
 						</tr>
 					</thead>
@@ -138,14 +68,14 @@
 							<!-- th, for문으로 돌립니다 -->
 							<!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
 							<th scope="row">
-								<!-- 체크박스 -->
-								<div class="info-align-box">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="flexCheckDefault"> <label
-											class="form-check-label" for="flexCheckDefault"> </label>
-									</div>
-								</div>
+								<!-- 체크박스 --> <!-- <div class="info-align-box">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                      
+                      </label>
+                    </div>
+                  </div> -->
 							</th>
 
 
@@ -163,7 +93,7 @@
 
 									<!-- 제품 이름 -->
 									<div class="product-inforamtion" style="font-weight: 800;">
-										${userEntity}</div>
+										white skirts</div>
 
 									<!-- 사이즈 추가 -->
 									<!-- 사이즈 컴포넌트 추가 -->
@@ -174,10 +104,9 @@
 									</div>
 									<!-- 상품 페이지 버튼 -->
 									<!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
-									<div class="product-button">
-										<button type="button" class="btn btn-light"
-											style="margin-left: 20px;" href="#">상품 페이지</button>
-									</div>
+									<!-- <div class="product-button"> -->
+									<!-- <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>    -->
+									<!-- </div> -->
 								</div>
 
 							</td>
@@ -202,12 +131,10 @@
 											<input class="num-wrap" value="2" readonly>
 										</div>
 
-										<div class="up-and-down">
-											<img
-												src="https://img.icons8.com/material-outlined/24/000000/up.png" />
-											<img
-												src="https://img.icons8.com/material-outlined/24/000000/down--v1.png" />
-										</div>
+										<!-- <div class="up-and-down">
+                          <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
+                          <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
+                        </div> -->
 
 									</div>
 								</td>
@@ -221,11 +148,14 @@
 
 									</div>
 								</td>
-								<td>
-									<div class="info-align-box">
-										<button type="button" class="btn btn-danger">삭제</button>
-									</div>
-								</td>
+								<!-- <td>
+                    <div class="info-align-box">
+                      <button type="button" class="btn btn-danger">
+                        삭제
+
+                      </button>
+                    </div>
+                  </td> -->
 
 							</div>
 						</tr>
@@ -240,11 +170,12 @@
 							<th scope="row">
 								<!-- 체크박스 -->
 								<div class="info-align-box">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="flexCheckDefault"> <label
-											class="form-check-label" for="flexCheckDefault"> </label>
-									</div>
+									<!-- <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                      
+                      </label>
+                    </div> -->
 								</div>
 							</th>
 
@@ -274,10 +205,9 @@
 									</div>
 									<!-- 상품 페이지 버튼 -->
 									<!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
-									<div class="product-button">
-										<button type="button" class="btn btn-light"
-											style="margin-left: 20px;" href="#">상품 페이지</button>
-									</div>
+									<!-- <div class="product-button">
+                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>   
+                    </div> -->
 								</div>
 
 							</td>
@@ -302,12 +232,10 @@
 											<input class="num-wrap" value="2" readonly>
 										</div>
 
-										<div class="up-and-down">
-											<img
-												src="https://img.icons8.com/material-outlined/24/000000/up.png" />
-											<img
-												src="https://img.icons8.com/material-outlined/24/000000/down--v1.png" />
-										</div>
+										<!-- <div class="up-and-down">
+                          <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
+                          <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
+                        </div> -->
 
 									</div>
 								</td>
@@ -322,9 +250,12 @@
 									</div>
 								</td>
 								<td>
-									<div class="info-align-box">
-										<button type="button" class="btn btn-danger">삭제</button>
-									</div>
+									<!-- <div class="info-align-box">
+                      <button type="button" class="btn btn-danger">
+                        삭제
+
+                      </button>
+                    </div> -->
 								</td>
 
 							</div>
@@ -339,11 +270,12 @@
 							<th scope="row">
 								<!-- 체크박스 -->
 								<div class="info-align-box">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="flexCheckDefault"> <label
-											class="form-check-label" for="flexCheckDefault"> </label>
-									</div>
+									<!-- <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                      
+                      </label>
+                    </div> -->
 								</div>
 							</th>
 
@@ -373,10 +305,9 @@
 									</div>
 									<!-- 상품 페이지 버튼 -->
 									<!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
-									<div class="product-button">
-										<button type="button" class="btn btn-light"
-											style="margin-left: 20px;" href="#">상품 페이지</button>
-									</div>
+									<!-- <div class="product-button">
+                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>   
+                    </div> -->
 								</div>
 
 							</td>
@@ -398,12 +329,10 @@
 											<input class="num-wrap" value="2" readonly>
 										</div>
 
-										<div class="up-and-down">
-											<img
-												src="https://img.icons8.com/material-outlined/24/000000/up.png" />
-											<img
-												src="https://img.icons8.com/material-outlined/24/000000/down--v1.png" />
-										</div>
+										<!-- <div class="up-and-down">
+                          <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
+                          <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
+                        </div> -->
 
 									</div>
 								</td>
@@ -418,9 +347,12 @@
 									</div>
 								</td>
 								<td>
-									<div class="info-align-box">
-										<button type="button" class="btn btn-danger">삭제</button>
-									</div>
+									<!-- <div class="info-align-box">
+                      <button type="button" class="btn btn-danger">
+                        삭제
+
+                      </button>
+                    </div> -->
 								</td>
 
 							</div>
@@ -432,69 +364,7 @@
 
 						<!-- 구버전 -->
 						<!-- 한줄 시작 -->
-						<tr>
-							<!-- th, for문으로 돌립니다 -->
-							<!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
-							<th scope="row">
-								<!-- 체크박스 -->
-								<div class="info-align-box">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="flexCheckDefault"> <label
-											class="form-check-label" for="flexCheckDefault"> </label>
-									</div>
-								</div>
-							</th>
 
-
-
-							<!-- 상품정보 -->
-							<!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
-							<td>
-								<div class="product-info-box">
-									<div class="minibox-img">
-										<!-- 이미지 -->
-										<img id="img1"
-											src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-											class="rounded float" alt="...">
-									</div>
-
-									<!-- 제품 이름 -->
-									<div class="product-inforamtion" style="font-weight: 800;">
-										white skirts</div>
-
-									<!-- 사이즈 추가 -->
-									<!-- 사이즈 컴포넌트 추가 -->
-									<div class="product-size">size</div>
-								</div>
-
-							</td>
-
-
-
-							<div class="info-align">
-								<!-- 가격 -->
-								<td>
-									<div class="info-align-box">23.99$</div>
-								</td>
-								<!-- 수량 -->
-								<!-- 수량 컴포넌트 추가 -->
-								<td>
-									<div class="info-align-box">2</div>
-								</td>
-								<!-- 합계 -->
-								<!-- 계산되어서 되는 합계 추가 -->
-								<td>
-									<div class="info-align-box">47.98$</div>
-								</td>
-								<td>
-									<div class="info-align-box">
-										<button type="button" class="btn btn-danger">삭제</button>
-									</div>
-								</td>
-
-							</div>
-						</tr>
 						<!-- 한줄 종료 -->
 
 					</tbody>
@@ -502,20 +372,22 @@
 
 				<!-- 테이블 end  -->
 
-				<div class="checkbox-area">
-					<!-- 체크박스 -->
-					<div class="info-align-box">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="selectall"
-								id="flexCheckDefault" onclick="selectAll(this)"> <label
-								class="form-check-label" for="flexCheckDefault">
-								<div>전체선택</div>
-							</label>
-						</div>
-						<button type="button" class="btn btn-danger">삭제</button>
-					</div>
+				<!-- <div class="checkbox-area"> -->
+				<!-- 체크박스 -->
+				<!-- <div class="info-align-box"> -->
+				<!-- <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="selectall" id="flexCheckDefault" onclick="selectAll(this)">
+                <label class="form-check-label" for="flexCheckDefault">
+                  <div>전체선택</div>
+                </label>
+              </div>
+              <button type="button" class="btn btn-danger">
+                삭제
 
-				</div>
+              </button> -->
+				<!-- </div> -->
+
+				<!-- </div> -->
 		</section>
 		<!-- bucket end -->
 
@@ -536,21 +408,83 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 	</section>
 
+	<!-- 결제 박스 영역입니다 -->
+	<section class="payment-box">
+		<div class="col-md-7 col-lg-8">
+			<h4 class="mb-3">Billing address</h4>
+
+			<!--           form Start -->
+			<form class="needs-validation" novalidate 
+				onsubmit="goPaymentAPI()">
+				<div class="row g-3">
+					<div class="col-sm-6">
+						<label for="firstName" class="form-label">name</label> <input
+							type="text" class="form-control" id="firstName" placeholder=""
+							value="" name="name" required>
+						<div class="invalid-feedback">Valid first name is required.
+						</div>
+					</div>
 
 
+
+					<div class="col-12">
+						<label for="username" class="form-label">Username</label>
+						<div class="input-group has-validation">
+							<span class="input-group-text">@</span> <input type="text"
+								class="form-control" id="username" 
+								name="username" readonly="readonly" value="${principal.username}" required>
+							<div class="invalid-feedback">Your username is required.</div>
+						</div>
+					</div>
+
+					<div class="col-12">
+						<label for="email" class="form-label">Email <span
+							class="text-muted">(Optional)</span></label> <input type="email"
+							class="form-control" id="email" placeholder="you@example.com"
+							name="email" value="${principal.email}" readonly="readonly">
+						<div class="invalid-feedback">Please enter a valid email
+							address for shipping updates.</div>
+					</div>
+					<!-- 					주소찾기 버튼 css수정 부탁 -->
+					<input class="btn btn-info" type="button" onClick="goPopup();"
+						value="findaddress" />
+					<div class="col-12">
+						<label for="address" class="form-label">Address</label> <input
+							type="text" class="form-control" id="address" class="address"
+							placeholder="1234 Main St" required>
+						<div class="invalid-feedback">Please enter your shipping
+							address.</div>
+					</div>
+
+
+
+
+					<hr class="my-4">
+
+					<div class="form-check">
+						<input type="checkbox" class="form-check-input" id="same-address">
+						<label class="form-check-label" for="same-address">Shipping
+							address is the same as my billing address</label>
+					</div>
+
+					<div class="form-check">
+						<input type="checkbox" class="form-check-input" id="save-info">
+						<label class="form-check-label" for="save-info">Save this
+							information for next time</label>
+					</div>
+
+
+					<hr class="my-4">
+
+					<button class="w-100 btn btn-primary btn-lg" type="submit"
+						style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;">Continue
+						to checkout</button>
+					<!--         form End -->
+			</form>
+		</div>
+	</section>
 
 
 

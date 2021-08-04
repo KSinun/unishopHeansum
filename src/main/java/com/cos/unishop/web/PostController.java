@@ -50,6 +50,7 @@ public class PostController {
 	    //결제화면으로 이동하는 컨트롤러
 	    @GetMapping("post/payment/{id}")
 	    public String paymentPage(@PathVariable int id, Model model) {
+	    	
 	    	Post postEntity = postRepository.findById(id).get();
 	    	model.addAttribute("postEntity", postEntity);
 	    	

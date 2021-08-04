@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.cos.unishop.domain.post.PostRepository;
 import com.cos.unishop.domain.user.User;
 import com.cos.unishop.domain.user.UserRepository;
-import com.korea.dbapp.domain.post.Post;
 
 import lombok.RequiredArgsConstructor;
 
@@ -37,7 +36,7 @@ public class MyPageController {
 	@GetMapping("/bucket/{id}")
 	public String myPage(@PathVariable int id, Model model) {
 		User userEntity = userRepository.findById(id).get();
-		model.addAttribute("UserEntity", userEntity);
+		model.addAttribute("userEntity", userEntity);
 		return"user/bucket";
 	}
 	

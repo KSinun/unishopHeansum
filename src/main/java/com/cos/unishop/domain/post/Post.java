@@ -1,5 +1,6 @@
 package com.cos.unishop.domain.post;
 
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -13,7 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.cos.unishop.Sex;
-import com.cos.unishop.comments.Comments;
 import com.cos.unishop.domain.user.User;
 
 import lombok.Data;
@@ -42,6 +42,9 @@ public class Post {
 	@JoinColumn(name = "user_id")
 	@ManyToOne
 	private User user; 
+	
+	@OneToMany
+	private List<Post> products;
 	
 //	// Comments
 //	
