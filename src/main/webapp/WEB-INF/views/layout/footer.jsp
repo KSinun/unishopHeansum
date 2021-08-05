@@ -91,7 +91,7 @@ function goPaymentAPI(){
 					price: price
 			};
 			
-			response = await fetch("/bucket/"+id,{
+			let response = await fetch("/bucket",{
 				method: "post",
 				body: JSON.stringify(postDto),
 				headers: {
@@ -104,7 +104,6 @@ function goPaymentAPI(){
 			console.log(parseResponse);
     		
     		if(parseResponse === "ok"){
-    			location.href = "/bucket/${principal.id}";
     			
     			if(confirm("선택한 상품이 장바구니에 담겼습니다, 장바구니로 가시겠습니까?")== true) {
     				location.href = "/bucket/${principal.id}";

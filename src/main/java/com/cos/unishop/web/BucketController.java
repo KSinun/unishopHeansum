@@ -33,73 +33,38 @@ public class BucketController {
 	private final UserRepository userRepository;
 	private final BucketProductsRepository bucketProductsRepository;
 	
-	@PostMapping("/bucket/{id}")
-	public @ResponseBody String input(@PathVariable int id, @RequestBody BucketProducts bucket) {
-		Post postEntity = postRepository.findById(id).get();
-		postEntity.getId(); // post 프라이머리 id
+	@PostMapping("/bucket")
+	public @ResponseBody String input(@RequestBody BucketProducts bucket) {
+		
 		
 		User principal = (User) session.getAttribute("principal");
 		
+		bucket.setUser(principal);
+		bucketProductsRepository.save(bucket);
+		System.out.println("나 때려짐? input PostMapping");
 		
-		BucketProducts bucketEntity = null;
-		
-		bucketEntity.setPrice(postEntity.getPrice());
-		bucketEntity.setImage(postEntity.getImage());
-		bucketEntity.setSize(postEntity.getSize());
-		bucketEntity.setProductname(postEntity.getProductname());
-		
-		// 버켓 형태로 만든 다음에 저장!
-		// 빈껍데기라도 만들자
-		bucketProductsRepository.save(bucketEntity);
-		
-//		int UserId = principal.getId();
-//		
-//		
-//		BucketProducts bucketEntity = bucketProductsRepository.getById(UserId);
-//		
-//		bucketEntity.setUser(principal);
-//		bucketProductsRepository.save(bucketEntity);
-		
-//		bucketEntity.setImage(postEntity.getImage());
-//		bucketEntity.setPrice(postEntity.getPrice());
-//		bucketEntity.setSize(postEntity.getSize());
-//		bucketEntity.setProductname(postEntity.getProductname());
-		
-//		bucketProductsRepository.save(bucketEntity);
-		
+
 		return "ok";
 	}
 	
 	
 	
 	
-//	@PostMapping("/bucket/save")
-//	public String inputBucket(@RequestBody Bucket bucket) {
-//		System.out.println(" inputBucket 나실행됨?");
-//
-//		User principal = (User) session.getAttribute("principal");
-//
-//		
-//		
-//		String id = Integer.toString(principal.getId());
-//		bucketRepository.save(bucket);
-//		return "redirect:/bucket/"+id;
-//	}
+
 	
 	@GetMapping("/bucket/{id}")
 	public String showBucket(@PathVariable int id, Model model) {
-//		 id 잡아서 이아이디의 버켓에 저장
-//		 그러기 위해서는 postentity와 bucketentity 필요
 		System.out.println("get 장바구니 나실행됨?");
+		// 들어오는 id는 principal id임
 		
-		User userEntity = userRepository.findById(id).get();
+		List<BucketProducts> bucketProductsEntity = bucketProductsRepository.mFindAllByProductId(id);
+//		User userEntity = userRepository.findById(id).get();
 //		List<Bucket> bucketEntity = userEntity.getBucket();
 		
-		BucketProducts bucketEntity = bucketProductsRepository.findById(id).get();
 		
 		System.out.println("마지막 나실행됨>?");
 //		Bucket bucketEntity = bucketRepository.findById(id).get();
-		model.addAttribute(bucketEntity);
+		model.addAttribute("bucketProductsEntity",bucketProductsEntity);
 		return "user/bucket";
 	}
 	
