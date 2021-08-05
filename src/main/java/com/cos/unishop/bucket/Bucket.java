@@ -26,9 +26,9 @@ import lombok.NoArgsConstructor;
 public class Bucket {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonIgnoreProperties("user")
 	@ManyToOne
 	@JoinColumn(name="user_id")

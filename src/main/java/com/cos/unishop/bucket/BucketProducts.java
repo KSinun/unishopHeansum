@@ -18,7 +18,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 
-
+@Data
+@Entity
 public class BucketProducts {
 // 장바구니 DB입니다
 	
@@ -27,7 +28,7 @@ public class BucketProducts {
 	private int id;
 	
 	@JoinColumn(name = "user_id")
-	@OneToOne
+	@ManyToOne
 	private User user; 
 	
 
@@ -50,5 +51,9 @@ public class BucketProducts {
 //	@JoinColumn(name = "total_payment")
 	private int totalPayment;
 	
+	private String productname;
+	private String image;
+	private String size;
+	private int price;
 	
 }
